@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://3yg0lg8tmtul"]
+[gd_scene load_steps=25 format=3 uid="uid://bfafhct3hdkky"]
 
 [ext_resource type="FontFile" uid="uid://3dr60totbkb3" path="res://Fonts/Poppins-ExtraBold.ttf" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://cinbltewstrrw" path="res://Assets/Menu/PANTALLA-DE-INICIO_0000s_0008_TABLERO.png" id="1_glbon"]
+[ext_resource type="Script" uid="uid://b04dsgxdn7u68" path="res://main_menu.gd" id="1_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://nlbwci76l6x5" path="res://Assets/Menu/PANTALLA-DE-INICIO_0000s_0007_MAPA.png" id="2_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bc28u23k82u5l" path="res://Assets/Menu/PANTALLA-DE-INICIO_0000s_0006_FOTO.png" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://dgg3ojokyhwo7" path="res://Assets/Menu/PANTALLA-DE-INICIO_0000s_0001_TITULO.png" id="3_qe12f"]
@@ -55,6 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j5v2v")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -185,3 +187,8 @@ theme_override_fonts/font = ExtResource("1_06t4h")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxTexture_w44g7")
 text = "SALIR"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
