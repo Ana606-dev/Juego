@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Juego"
+config/name="PROTOTIPO"
+run/main_scene="uid://bgiuclogf4ai2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
