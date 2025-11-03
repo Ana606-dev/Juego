@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://buoq1bg7nqc3"]
+[gd_scene load_steps=9 format=3 uid="uid://vcihbh5ks3vs"]
 
 [ext_resource type="Texture2D" uid="uid://dm238en5g7vcs" path="res://textures/world/dirt_ground_texture.jpg" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://ce8dbqu2wkuww" path="res://scenes/agents/player/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ce8dbqu2wkuww" path="res://Scenes/agents/player/player.tscn" id="2_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
