@@ -50,5 +50,5 @@ shape = SubResource("BoxShape3D_tefeu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22307372, 1.3973522, 0.19696951)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094010115, 0.6279502, 2.5830054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906299, 0.45065904, 3.4572062)
 fov = 65.20249
