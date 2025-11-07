@@ -1,39 +1,49 @@
-[gd_scene load_steps=18 format=3 uid="uid://vcihbh5ks3vs"]
+[gd_scene load_steps=11 format=3 uid="uid://vcihbh5ks3vs"]
 
-[ext_resource type="Texture2D" uid="uid://dm238en5g7vcs" path="res://textures/world/dirt_ground_texture.jpg" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ce8dbqu2wkuww" path="res://scenes/agents/player/player.tscn" id="2_sugp2"]
-[ext_resource type="Texture2D" uid="uid://dcgxutxba6gdg" path="res://textures/world/town/ESTRUCTURAS/FONDO_0001s_0003_CASA-PRINCIPAL.png" id="3_tefeu"]
-[ext_resource type="Texture2D" uid="uid://5ta7kxscp7e7" path="res://textures/world/town/ESTRUCTURAS/FONDO_0000s_0000_CASA-MORADA.png" id="4_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://d18u0gvgqno1y" path="res://textures/world/town/ESTRUCTURAS/FONDO_0002s_0003_CASA-AMARILLA.png" id="5_tipki"]
-[ext_resource type="Texture2D" uid="uid://dnxppmnc2hc3y" path="res://textures/world/town/ESTRUCTURAS/FONDO_0003s_0005_TIENDA.png" id="6_85g3d"]
+[ext_resource type="PackedScene" uid="uid://o1hmh6kbak0x" path="res://Assets/World/fachada.tscn" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://bk3vjifwk3x8a" path="res://textures/world/town/DECORACIONES/caro2.png" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cc3e6aw6gl54w" path="res://textures/world/town/DECORACIONES/FONDO_0000s_0001_CONTENEDOR-TOXICO.png" id="7_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bl72ydrtull26" path="res://textures/world/town/DECORACIONES/FONDO_0002s_0000_CONTENEDOR-TOXICO-2.png" id="8_tipki"]
-[ext_resource type="Texture2D" uid="uid://baotp7pvd3viw" path="res://textures/world/town/DECORACIONES/FONDO_0001s_0002_LAMPARA.png" id="9_85g3d"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tefeu"]
+sky_top_color = Color(0.7264661, 0.3253758, 0.03591555, 1)
+sky_horizon_color = Color(0.79831076, 0.6409166, 0.52496535, 1)
+sky_curve = 0.07500003
+ground_bottom_color = Color(0.41757223, 0.18908583, 0.014741109, 1)
+ground_horizon_color = Color(0.79831076, 0.6409166, 0.52496535, 1)
+ground_curve = 0.027320895
+energy_multiplier = 2.0
 
-[sub_resource type="Sky" id="Sky_sugp2"]
-sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+[sub_resource type="Sky" id="Sky_o6xl0"]
+sky_material = SubResource("ProceduralSkyMaterial_tefeu")
 
-[sub_resource type="Environment" id="Environment_jyhfs"]
+[sub_resource type="Environment" id="Environment_tipki"]
 background_mode = 2
-sky = SubResource("Sky_sugp2")
+background_color = Color(0.83945125, 0.5203906, 0.71257, 1)
+sky = SubResource("Sky_o6xl0")
 tonemap_mode = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
-albedo_texture = ExtResource("1_0wfyh")
-uv1_scale = Vector3(0.3, 0.3, 0.3)
-uv1_offset = Vector3(0.095, 0, 0)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 0.90125066
-
-[sub_resource type="BoxMesh" id="BoxMesh_tbgi4"]
-material = SubResource("StandardMaterial3D_jyhfs")
-size = Vector3(75, 1, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tefeu"]
+tonemap_exposure = 1.23
+tonemap_white = 1.7
+glow_enabled = true
+glow_intensity = 1.03
+glow_hdr_threshold = 1.15
+glow_hdr_scale = 1.54
+glow_hdr_luminance_cap = 6.4
+fog_mode = 1
+fog_light_color = Color(1.0097971, 0.46848443, 0.20923688, 1)
+fog_light_energy = 11.2
+fog_sun_scatter = 1.0
+fog_density = 0.8551
+fog_depth_curve = 1.2745606
+fog_depth_end = 118.5
+volumetric_fog_density = 0.5572
+volumetric_fog_albedo = Color(1, 1, 0.5803922, 1)
+volumetric_fog_emission_energy = 11.5
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.23
+adjustment_saturation = 0.7
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6xl0"]
 size = Vector3(1.333641, 1.457467, 0.30300903)
@@ -44,63 +54,28 @@ size = Vector3(0.77124023, 0.993042, 0.24298096)
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jyhfs")
+environment = SubResource("Environment_tipki")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+transform = Transform3D(-0.7046342, -0.61696815, 0.35048673, 0, 0.4939419, 0.8694949, -0.70957077, 0.61267585, -0.34804836, 0, 0, 0)
+light_color = Color(0.5827223, 0.49695826, 0.36606944, 1)
+light_energy = 7.55
 shadow_enabled = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_tbgi4")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(75, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
-shape = SubResource("BoxShape3D_tefeu")
+directional_shadow_max_distance = 80.0
 
 [node name="Player" parent="." instance=ExtResource("2_sugp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22307372, 1.3973522, 0.19696951)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22307372, 1.3973522, 0.6816368)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.906299, 0.45065904, 3.4572062)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0653456, 0.45065904, 2.967794)
 fov = 65.20249
 
-[node name="CASAS" type="Node3D" parent="."]
-
-[node name="Casa4" type="StaticBody3D" parent="CASAS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.128674, 0, -0.49869394)
-
-[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa4"]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, -1.2408981, 3.333105, -2.2947683)
-texture = ExtResource("6_85g3d")
-
-[node name="Casa3" type="StaticBody3D" parent="CASAS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.000021, 0, -0.49869394)
-
-[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa3"]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
-texture = ExtResource("5_tipki")
-
-[node name="Casa2" type="StaticBody3D" parent="CASAS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.644812, 0, -0.49869394)
-
-[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa2"]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
-texture = ExtResource("4_o6xl0")
-
-[node name="Casa" type="StaticBody3D" parent="CASAS"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.49869394)
-
-[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa"]
-transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
-texture = ExtResource("3_tefeu")
-
 [node name="Tarro" type="StaticBody3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 2.663559, 1.027389, 0.23068273)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 2.663559, 1.027389, 0.71535003)
 
 [node name="Sprite3D" type="Sprite3D" parent="Tarro"]
 transform = Transform3D(0.39500004, 0, 0, 0, 0.39500004, 0, 0, 0, 0.39500004, 0, 0, -0.06893125)
+shaded = true
 alpha_cut = 1
 texture = ExtResource("7_o6xl0")
 
@@ -109,10 +84,11 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0.012
 shape = SubResource("BoxShape3D_o6xl0")
 
 [node name="Tarro2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -2.2974324, 0.89571846, 0.23068273)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, -2.4658914, 0.89571846, 0.71535003)
 
 [node name="Sprite3D" type="Sprite3D" parent="Tarro2"]
 transform = Transform3D(0.39500004, 0, 0, 0, 0.39500004, 0, 0, 0, 0.39500004, 0, 0, -0.06893125)
+shaded = true
 alpha_cut = 1
 texture = ExtResource("8_tipki")
 
@@ -120,26 +96,14 @@ texture = ExtResource("8_tipki")
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, -0.07751465, -0.003479123, -0.053253204)
 shape = SubResource("BoxShape3D_tipki")
 
-[node name="Poste" type="StaticBody3D" parent="."]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 3.0415144, 2.6029549, -1.6657944)
+[node name="Node3D" parent="." instance=ExtResource("5_tbgi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39263487, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="Poste"]
-transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.6621074, 0.061003212, 0.01083557, -0.061858535, 0.6442671, 0.1527039, 0.0035104167, -0.15304762, 0.64713925, 11.223751, 0.27362537, 0.8211286)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(0.30499998, -7.741619e-09, 2.3283064e-10, 3.5797711e-09, 0.30500013, 0, 8.1490725e-10, 1.4901161e-08, 0.305, 4.4219704, 1.2290043, 2.4124599)
+shaded = true
 alpha_cut = 1
-texture = ExtResource("9_85g3d")
-
-[node name="Poste2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -10.449391, 2.6029549, -1.6657944)
-
-[node name="Sprite3D" type="Sprite3D" parent="Poste2"]
-transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
-alpha_cut = 1
-texture = ExtResource("9_85g3d")
-
-[node name="Poste3" type="StaticBody3D" parent="."]
-transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 20.947262, 2.6029549, -1.6657944)
-
-[node name="Sprite3D" type="Sprite3D" parent="Poste3"]
-transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
-alpha_cut = 1
-texture = ExtResource("9_85g3d")
+texture = ExtResource("6_tefeu")

@@ -1,0 +1,194 @@
+[gd_scene load_steps=17 format=3 uid="uid://o1hmh6kbak0x"]
+
+[ext_resource type="PackedScene" uid="uid://xmo23xfx62a5" path="res://Assets/World/cercas.tscn" id="1_pjtvk"]
+[ext_resource type="Texture2D" uid="uid://dnxppmnc2hc3y" path="res://textures/world/town/ESTRUCTURAS/FONDO_0003s_0005_TIENDA.png" id="2_ynqtf"]
+[ext_resource type="Texture2D" uid="uid://d18u0gvgqno1y" path="res://textures/world/town/ESTRUCTURAS/FONDO_0002s_0003_CASA-AMARILLA.png" id="3_ixyw6"]
+[ext_resource type="Texture2D" uid="uid://5ta7kxscp7e7" path="res://textures/world/town/ESTRUCTURAS/FONDO_0000s_0000_CASA-MORADA.png" id="4_ipjak"]
+[ext_resource type="Texture2D" uid="uid://dcgxutxba6gdg" path="res://textures/world/town/ESTRUCTURAS/FONDO_0001s_0003_CASA-PRINCIPAL.png" id="5_hcj5g"]
+[ext_resource type="Texture2D" uid="uid://cnmyqaeq83g8l" path="res://textures/world/town/NATURALEZA/FONDO_0001s_0004_PINO.png" id="6_ixyw6"]
+[ext_resource type="Texture2D" uid="uid://baotp7pvd3viw" path="res://textures/world/town/DECORACIONES/FONDO_0001s_0002_LAMPARA.png" id="7_ipjak"]
+[ext_resource type="Texture2D" uid="uid://ba1t5cdb5thge" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0004_ANUNCIO.png" id="8_ipjak"]
+[ext_resource type="Texture2D" uid="uid://bebignalivqb4" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0002_BOLSA-DE-BASURA-1.png" id="9_ev5li"]
+[ext_resource type="Texture2D" uid="uid://dwc8clwjb2kai" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0003_BOLSA-DE-BASURA-2.png" id="10_en1rv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev5li"]
+albedo_color = Color(0.016597895, 0.010175862, 0.010175862, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_en1rv"]
+material = SubResource("StandardMaterial3D_ev5li")
+size = Vector3(75, 0.175, 3.76)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_syed5"]
+size = Vector3(75, 0.175, 3.76)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v8oj2"]
+size = Vector3(75, 0.645, 5.88)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct5gf"]
+albedo_color = Color(0.10552866, 0.20840967, 0.011382313, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vangu"]
+size = Vector3(75, 0.28, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Calle" type="StaticBody3D" parent="."]
+
+[node name="Calle" type="MeshInstance3D" parent="Calle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.616945)
+mesh = SubResource("BoxMesh_en1rv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Calle"]
+shape = SubResource("BoxShape3D_syed5")
+
+[node name="Pasto" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.351072)
+mesh = SubResource("BoxMesh_v8oj2")
+skeleton = NodePath("../Franjas")
+surface_material_override/0 = SubResource("StandardMaterial3D_ct5gf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pasto"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.083004)
+mesh = SubResource("BoxMesh_v8oj2")
+skeleton = NodePath("../StaticBody3D/MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ct5gf")
+
+[node name="Franjas" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.678273)
+mesh = SubResource("BoxMesh_vangu")
+skeleton = NodePath("../Calle")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Franjas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.715953)
+mesh = SubResource("BoxMesh_vangu")
+skeleton = NodePath("../..")
+
+[node name="Cercas" parent="." instance=ExtResource("1_pjtvk")]
+transform = Transform3D(-6.9938224e-08, 0, 1.6, 0, 1.6, 0, -1.6, 0, -6.9938224e-08, -22.09393, 0.6875951, -1.56)
+
+[node name="Cercas2" parent="Cercas" instance=ExtResource("1_pjtvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-07, 0, 13.479939)
+skeleton = NodePath("../..")
+
+[node name="Cercas3" parent="Cercas" instance=ExtResource("1_pjtvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2516975e-06, 0, 24.380177)
+skeleton = NodePath("../..")
+
+[node name="Cercas4" parent="Cercas" instance=ExtResource("1_pjtvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5762787e-07, 0, -9.149971)
+skeleton = NodePath("../..")
+
+[node name="Cercas5" parent="Cercas" instance=ExtResource("1_pjtvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66893e-06, 0, 36.934067)
+skeleton = NodePath("../..")
+
+[node name="CASAS" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06, -0.317, -0.614965)
+
+[node name="Casa4" type="StaticBody3D" parent="CASAS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.93875, -4.7683716e-07, -0.49869394)
+
+[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa4"]
+transform = Transform3D(0.39, 0, 0, 0, 0.39, 0, 0, 0, 0.39, -1.2408981, 2.9042096, -2.2947683)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("2_ynqtf")
+
+[node name="Casa3" type="StaticBody3D" parent="CASAS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.789667, 0, -0.49869394)
+
+[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa3"]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("3_ixyw6")
+
+[node name="Casa2" type="StaticBody3D" parent="CASAS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.268932, 0, -0.49869394)
+
+[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa2"]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_ipjak")
+
+[node name="Casa" type="StaticBody3D" parent="CASAS"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1750922, 0, -0.49869394)
+
+[node name="Sprite3D" type="Sprite3D" parent="CASAS/Casa"]
+transform = Transform3D(0.47, 0, 0, 0, 0.47, 0, 0, 0, 0.47, 0, 4.102707, -2.2947683)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("5_hcj5g")
+
+[node name="PINO" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3335593, 2.6078205, -1.6638625)
+
+[node name="Sprite3D" type="Sprite3D" parent="PINO"]
+transform = Transform3D(0.485, 0, 0, 0, 0.485, 0, 0, 0, 0.485, 1.4048023, -0.060147762, -0.28720903)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("6_ixyw6")
+
+[node name="POSTES" type="Node3D" parent="."]
+
+[node name="Poste4" type="StaticBody3D" parent="POSTES"]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -23.545347, 2.1247492, -0.5499382)
+
+[node name="Sprite3D" type="Sprite3D" parent="POSTES/Poste4"]
+transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_ipjak")
+
+[node name="Poste3" type="StaticBody3D" parent="POSTES"]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 31.360186, 2.1247492, -0.5499382)
+
+[node name="Sprite3D" type="Sprite3D" parent="POSTES/Poste3"]
+transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_ipjak")
+
+[node name="Poste2" type="StaticBody3D" parent="POSTES"]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -3.6787224, 2.1247492, -0.5499382)
+
+[node name="Sprite3D" type="Sprite3D" parent="POSTES/Poste2"]
+transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_ipjak")
+
+[node name="Poste" type="StaticBody3D" parent="POSTES"]
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, 12.689798, 2.1247492, -0.5499382)
+
+[node name="Sprite3D" type="Sprite3D" parent="POSTES/Poste"]
+transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_ipjak")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9049999, 0, 0, 0, 0.8559048, 0.2940268, 0, -0.2940268, 0.8559048, -27.703074, 0.9476476, -2.11)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
+transform = Transform3D(0.39, 0, 0, 0, 0.39, 0, 0, 0, 0.39, 0, 0, 0)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("8_ipjak")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -32.78887, 0.7598959, -1.916425)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D2"]
+shaded = true
+alpha_cut = 1
+texture = ExtResource("9_ev5li")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -33.48916, 1.1613334, -2.6304383)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D3"]
+shaded = true
+alpha_cut = 1
+texture = ExtResource("10_en1rv")
