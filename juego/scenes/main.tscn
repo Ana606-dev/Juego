@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://vcihbh5ks3vs"]
+[gd_scene load_steps=25 format=3 uid="uid://vcihbh5ks3vs"]
 
 [ext_resource type="PackedScene" uid="uid://ce8dbqu2wkuww" path="res://scenes/agents/player/player.tscn" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dwp0fx62pmgf0" path="res://textures/world/town/DECORACIONES/TOWN_0001_PASTO3.png" id="3_85g3d"]
+[ext_resource type="Texture2D" uid="uid://dt2xbqvkv671e" path="res://textures/world/town/DECORACIONES/TOWN_0002_PASTO2.png" id="4_choun"]
 [ext_resource type="PackedScene" uid="uid://o1hmh6kbak0x" path="res://Assets/World/fachada.tscn" id="5_tbgi4"]
-[ext_resource type="Texture2D" uid="uid://bk3vjifwk3x8a" path="res://textures/world/town/DECORACIONES/caro2.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://dab6nyeeqlxkl" path="res://textures/world/town/DECORACIONES/TOWN_0006_POSTEE.png" id="6_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://cc3e6aw6gl54w" path="res://textures/world/town/DECORACIONES/FONDO_0000s_0001_CONTENEDOR-TOXICO.png" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://dh8t2jhh3nhlv" path="res://textures/world/town/DECORACIONES/TOWN_0005_SEMAFORO.png" id="7_tipki"]
 [ext_resource type="Texture2D" uid="uid://bl72ydrtull26" path="res://textures/world/town/DECORACIONES/FONDO_0002s_0000_CONTENEDOR-TOXICO-2.png" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://db6csjgxdig5o" path="res://Assets/3d/TOWN/llanta.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://bnx5onkglrbor" path="res://Assets/3d/TOWN/CAR/police_car.tscn" id="10_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://bcnwfouh2hop5" path="res://textures/world/fog/fog.png" id="11_eb6dy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tefeu"]
 sky_top_color = Color(0.7264661, 0.3253758, 0.03591555, 1)
@@ -51,6 +57,50 @@ size = Vector3(1.333641, 1.457467, 0.30300903)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tipki"]
 size = Vector3(0.77124023, 0.993042, 0.24298096)
 
+[sub_resource type="Curve" id="Curve_ya4ey"]
+_data = [Vector2(0.12105264, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_eb6dy"]
+width = 259
+curve = SubResource("Curve_ya4ey")
+
+[sub_resource type="Curve" id="Curve_trceg"]
+_data = [Vector2(0.015789464, 0.6731518), 0.0, 0.0, 0, 0, Vector2(0.7421053, 0.7198444), -0.9539348, -0.9539348, 0, 0, Vector2(0.9842106, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_a8y0u"]
+curve = SubResource("Curve_trceg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jkv2x"]
+lifetime_randomness = 0.16
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+angle_min = 10.0000105
+angle_max = 30.000011
+gravity = Vector3(-4.045, 15, 0)
+scale_min = 0.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_a8y0u")
+alpha_curve = SubResource("CurveTexture_eb6dy")
+turbulence_enabled = true
+turbulence_noise_scale = 2.905
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbj1t"]
+transparency = 1
+albedo_color = Color(0.35, 0.35, 0.35, 0.23137255)
+albedo_texture = ExtResource("11_eb6dy")
+albedo_texture_force_srgb = true
+albedo_texture_msdf = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_muem4"]
+material = SubResource("StandardMaterial3D_jbj1t")
+size = Vector2(1.095, 1.285)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ya4ey"]
+size = Vector3(70, 8.835, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -71,13 +121,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0653456, 0.45065904, 2.9677
 fov = 65.20249
 
 [node name="Tarro" type="StaticBody3D" parent="."]
-transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 2.663559, 1.027389, 0.71535003)
+transform = Transform3D(0.67, 0, 0, 0, 0.67, 0, 0, 0, 0.67, 10.335691, 1.027389, 0.71535003)
 
 [node name="Sprite3D" type="Sprite3D" parent="Tarro"]
 transform = Transform3D(0.39500004, 0, 0, 0, 0.39500004, 0, 0, 0, 0.39500004, 0, 0, -0.06893125)
 shaded = true
 alpha_cut = 1
 texture = ExtResource("7_o6xl0")
+
+[node name="Sprite3D" type="Sprite3D" parent="Tarro/Sprite3D"]
+transform = Transform3D(0.655, 0, 0, 0, 0.655, 0, 0, 0, 0.655, 0, -1.1093547, 0.38142538)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("3_85g3d")
+
+[node name="Sprite3D" type="Sprite3D" parent="Tarro/Sprite3D/Sprite3D"]
+transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 0.08821201, -0.035068512, -0.4916227)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("4_choun")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tarro"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0.012698889, 0.074578285, 0.038772613)
@@ -99,11 +161,51 @@ shape = SubResource("BoxShape3D_tipki")
 [node name="Node3D" parent="." instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39263487, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(0.6621074, 0.061003212, 0.01083557, -0.061858535, 0.6442671, 0.1527039, 0.0035104167, -0.15304762, 0.64713925, 11.223751, 0.27362537, 0.8211286)
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.71065235, 0.07739177, 0.014448113, -0.078638345, 0.6914891, 0.16396287, 0.0037743563, -0.16455494, 0.69579625, -18.098518, 0.60643816, 0.87775636)
 
-[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D"]
-transform = Transform3D(0.30499998, -7.741619e-09, 2.3283064e-10, 3.5797711e-09, 0.30500013, 0, 8.1490725e-10, 1.4901161e-08, 0.305, 4.4219704, 1.2290043, 2.4124599)
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D4"]
+transform = Transform3D(0.3633035, -0.09048438, -0.02116933, 0.090418875, 0.36391675, -0.0037453952, 0.021447398, -0.0014757116, 0.37438324, 4.3881636, 1.5970116, 2.4069772)
 shaded = true
 alpha_cut = 1
-texture = ExtResource("6_tefeu")
+texture = ExtResource("6_o6xl0")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(0.715, 0, 0, 0, 0.715, 0, 0, 0, 0.715, -30.109554, 0.60643816, 0.95845366)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D5"]
+transform = Transform3D(0.37500003, 0, 0, 0, 0.37500003, 0, 0, 0, 0.375, 2.0509834, 1.5970118, 2.4069772)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("7_tipki")
+
+[node name="LLANTAS" parent="." instance=ExtResource("10_choun")]
+transform = Transform3D(-0.016173052, 0.041628722, -0.26120964, 0.2644935, -1.1561378e-08, -0.016376376, -0.0025725688, -0.26170984, -0.041549157, -24.572405, 0.93, 0.74455416)
+
+[node name="LLANTA" parent="LLANTAS" instance=ExtResource("10_choun")]
+transform = Transform3D(0.7074263, -0.14473741, -0.34438208, -0.19122615, -0.7738642, -0.06757412, -0.32090575, 0.14207315, -0.71891195, -0.22619963, 1.0872194, -4.1856556)
+
+[node name="LLANTA2" parent="LLANTAS" instance=ExtResource("10_choun")]
+transform = Transform3D(0.74372816, -0.22612783, 0.18903483, -0.21554403, -0.7672496, -0.06977761, 0.20101935, 0.01393766, -0.7742071, 1.5546067, 1.010333, -1.7242785)
+
+[node name="POLICE CAR" parent="." instance=ExtResource("10_ya4ey")]
+transform = Transform3D(1.0298966, 0.034435436, 0.28814393, -0.04981482, 1.0676477, 0.05045807, -0.28588626, -0.061981812, 1.0292357, 28.896141, 0.3906576, 0.79566383)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, -23.945978, -0.17349172, 0.7549963)
+amount = 74
+lifetime = 1.5799999999999998
+preprocess = 1.38
+speed_scale = 0.2
+process_material = SubResource("ParticleProcessMaterial_jkv2x")
+draw_pass_1 = SubResource("QuadMesh_muem4")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0070853233)
+shape = SubResource("BoxShape3D_ya4ey")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6369824)
+shape = SubResource("BoxShape3D_ya4ey")

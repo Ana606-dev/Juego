@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlrpy8pfephgp"
-path.s3tc="res://.godot/imported/FONDO_0004s_0003_EDIFICIOS-1.png-a4aeed6db55f87ea5ad548805e7dfd20.s3tc.ctex"
+uid="uid://dwp0fx62pmgf0"
+path.s3tc="res://.godot/imported/TOWN_0001_PASTO3.png-e70821627a01d7743cc50d1d178f7cc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/world/town/LO DE ATRÁS/FONDO_0004s_0003_EDIFICIOS-1.png"
-dest_files=["res://.godot/imported/FONDO_0004s_0003_EDIFICIOS-1.png-a4aeed6db55f87ea5ad548805e7dfd20.s3tc.ctex"]
+source_file="res://textures/world/town/DECORACIONES/TOWN_0001_PASTO3.png"
+dest_files=["res://.godot/imported/TOWN_0001_PASTO3.png-e70821627a01d7743cc50d1d178f7cc8.s3tc.ctex"]
 
 [params]
 

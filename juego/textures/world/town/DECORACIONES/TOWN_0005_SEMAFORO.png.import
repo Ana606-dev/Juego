@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlrpy8pfephgp"
-path.s3tc="res://.godot/imported/FONDO_0004s_0003_EDIFICIOS-1.png-a4aeed6db55f87ea5ad548805e7dfd20.s3tc.ctex"
+uid="uid://dh8t2jhh3nhlv"
+path.s3tc="res://.godot/imported/TOWN_0005_SEMAFORO.png-3ec8c827dad14a0a5c5b3c11c46bdfe9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/world/town/LO DE ATRÁS/FONDO_0004s_0003_EDIFICIOS-1.png"
-dest_files=["res://.godot/imported/FONDO_0004s_0003_EDIFICIOS-1.png-a4aeed6db55f87ea5ad548805e7dfd20.s3tc.ctex"]
+source_file="res://textures/world/town/DECORACIONES/TOWN_0005_SEMAFORO.png"
+dest_files=["res://.godot/imported/TOWN_0005_SEMAFORO.png-3ec8c827dad14a0a5c5b3c11c46bdfe9.s3tc.ctex"]
 
 [params]
 

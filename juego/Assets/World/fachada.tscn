@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://o1hmh6kbak0x"]
+[gd_scene load_steps=43 format=3 uid="uid://o1hmh6kbak0x"]
 
 [ext_resource type="PackedScene" uid="uid://xmo23xfx62a5" path="res://Assets/World/cercas.tscn" id="1_pjtvk"]
 [ext_resource type="Texture2D" uid="uid://dnxppmnc2hc3y" path="res://textures/world/town/ESTRUCTURAS/FONDO_0003s_0005_TIENDA.png" id="2_ynqtf"]
@@ -10,6 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://ba1t5cdb5thge" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0004_ANUNCIO.png" id="8_ipjak"]
 [ext_resource type="Texture2D" uid="uid://bebignalivqb4" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0002_BOLSA-DE-BASURA-1.png" id="9_ev5li"]
 [ext_resource type="Texture2D" uid="uid://dwc8clwjb2kai" path="res://textures/world/town/DECORACIONES/FONDO_0003s_0003_BOLSA-DE-BASURA-2.png" id="10_en1rv"]
+[ext_resource type="Texture2D" uid="uid://blmjx3cjbp5mi" path="res://textures/world/town/DECORACIONES/TOWN_0004_HIDRANTE.png" id="12_ct5gf"]
+[ext_resource type="Texture2D" uid="uid://dgqmt6fiiybr2" path="res://textures/world/town/DECORACIONES/TOWN_0003_PASTO1.png" id="13_vangu"]
+[ext_resource type="Texture2D" uid="uid://dt2xbqvkv671e" path="res://textures/world/town/DECORACIONES/TOWN_0002_PASTO2.png" id="14_68aid"]
+[ext_resource type="Texture2D" uid="uid://duyacnbql016u" path="res://textures/world/town/DECORACIONES/TOWN_0007_SENALES.png" id="15_68aid"]
+[ext_resource type="Texture2D" uid="uid://rvg6v1ffm2um" path="res://textures/world/town/DECORACIONES/TOWN_0000_PASTO4.png" id="16_1db3t"]
+[ext_resource type="Texture2D" uid="uid://c5l3122sa6i4k" path="res://textures/world/town/NATURALEZA/FONDO_0002s_0001_ARBUSTO-2.png" id="16_ppoqv"]
+[ext_resource type="Texture2D" uid="uid://b4eot7wklcgha" path="res://textures/world/town/NATURALEZA/FONDO_0002s_0002_ARBUSTO-1.png" id="17_kraxp"]
+[ext_resource type="Texture2D" uid="uid://uqd27tvuqdn2" path="res://textures/world/town/NATURALEZA/FONDO_0001s_0000_ROCA-2.png" id="18_ddabq"]
+[ext_resource type="Texture2D" uid="uid://ca6yjgj0if8ba" path="res://textures/world/town/NATURALEZA/FONDO_0001s_0001_ROCA-1.png" id="19_f11g8"]
+[ext_resource type="Texture2D" uid="uid://c8hqx1dbxi58c" path="res://textures/world/town/LO DE ATRÁS/Fondo3.png" id="20_f11g8"]
+[ext_resource type="Texture2D" uid="uid://15ip68p34k70" path="res://textures/world/town/LO DE ATRÁS/Fondo2.png" id="20_kraxp"]
+[ext_resource type="Texture2D" uid="uid://bi6xaduq2gcv" path="res://textures/world/town/LO DE ATRÁS/Fondo4.png" id="22_m3qrj"]
+[ext_resource type="Texture2D" uid="uid://15rjj5wp27pm" path="res://textures/world/town/LO DE ATRÁS/Fondo6.png" id="23_m3qrj"]
+[ext_resource type="Texture2D" uid="uid://bcnwfouh2hop5" path="res://textures/world/fog/fog.png" id="24_dyyln"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev5li"]
 albedo_color = Color(0.016597895, 0.010175862, 0.010175862, 1)
@@ -29,6 +43,75 @@ albedo_color = Color(0.10552866, 0.20840967, 0.011382313, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vangu"]
 size = Vector3(75, 0.28, 1)
+
+[sub_resource type="Curve" id="Curve_tdmw0"]
+_data = [Vector2(0, 0.12840474), 0.0, 0.0, 0, 0, Vector2(0.9421053, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_m1d1q"]
+curve = SubResource("Curve_tdmw0")
+
+[sub_resource type="Curve" id="Curve_dyyln"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.63684213, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tdmw0"]
+curve = SubResource("Curve_dyyln")
+
+[sub_resource type="Gradient" id="Gradient_dyyln"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tdmw0"]
+gradient = SubResource("Gradient_dyyln")
+
+[sub_resource type="Curve" id="Curve_m1d1q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4857143, 0.9714286), -1.2321657, -1.2321657, 0, 0, Vector2(0.62857145, 0.4857143), -3.3212197, -3.3212197, 0, 0, Vector2(0.8428571, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+metadata/_snap_count = 70
+
+[sub_resource type="CurveTexture" id="CurveTexture_gd4ex"]
+curve = SubResource("Curve_m1d1q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gd4ex"]
+lifetime_randomness = 0.26
+emission_shape_offset = Vector3(-0.35, 0, 0)
+emission_shape_scale = Vector3(-0.09, 0.175, 0.095)
+emission_shape = 1
+emission_sphere_radius = 1.55
+angle_min = -289.0
+angle_max = -27.99999
+angle_curve = SubResource("CurveTexture_tdmw0")
+inherit_velocity_ratio = 0.25
+gravity = Vector3(6.85, 9.115, -5.405)
+scale_min = 0.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_gd4ex")
+scale_over_velocity_min = 261.9
+scale_over_velocity_max = 571.42
+color = Color(1, 0.36, 0.36, 0.1764706)
+color_ramp = SubResource("GradientTexture1D_tdmw0")
+alpha_curve = SubResource("CurveTexture_m1d1q")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+anim_speed_min = 9.4
+anim_speed_max = 11.05
+turbulence_noise_strength = 0.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dyyln"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odcrw"]
+next_pass = SubResource("ParticleProcessMaterial_dyyln")
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.18431373)
+albedo_texture = ExtResource("24_dyyln")
+emission = Color(0.61263025, 0.53913635, 0.28377268, 1)
+emission_energy_multiplier = 0.43
+
+[sub_resource type="QuadMesh" id="QuadMesh_tr3sn"]
+material = SubResource("StandardMaterial3D_odcrw")
 
 [node name="Node3D" type="Node3D"]
 
@@ -192,3 +275,145 @@ transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -33.48916, 1.1613
 shaded = true
 alpha_cut = 1
 texture = ExtResource("10_en1rv")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.6650001, -19.978716, 0.3285966, -2.051422)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D5"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("12_ct5gf")
+
+[node name="PASTO" type="Node3D" parent="."]
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="PASTO"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.6650001, -19.978716, 0.3285966, -2.051422)
+
+[node name="Sprite3D" type="Sprite3D" parent="PASTO/StaticBody3D6"]
+transform = Transform3D(0.375, 2.523302e-08, 8.1490725e-09, -7.275957e-10, 0.375, 0, -1.1641531e-10, -7.4505797e-09, 0.37499997, 1.1918888, 0.60879767, -0.10445881)
+shaded = true
+texture = ExtResource("13_vangu")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="PASTO"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.6650001, -28.434202, 0.21404171, -1.7237455)
+
+[node name="Sprite3D" type="Sprite3D" parent="PASTO/StaticBody3D7"]
+transform = Transform3D(0.375, 2.523302e-08, 8.1490725e-09, -7.275957e-10, 0.375, 0, -1.1641531e-10, -7.4505797e-09, 0.37499997, 1.1918888, 0.60879767, -0.10445881)
+shaded = true
+texture = ExtResource("14_68aid")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="."]
+transform = Transform3D(0.885, 0, 0, 0, 0.885, 0, 0, 0, 0.885, 19.219927, 0.81548476, -0.7035934)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D6"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("15_68aid")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="StaticBody3D6"]
+transform = Transform3D(0.885, 0, 0, 0, 0.885, 0, 0, 0, 0.885, 0.034582138, -1.4013474, -0.008542538)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D6/StaticBody3D6"]
+transform = Transform3D(0.63, 1.2223608e-09, 1.9557778e-10, -1.2223608e-09, 0.63, 1.2516976e-08, -1.9557776e-10, -1.2516976e-08, 0.63, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+texture = ExtResource("16_1db3t")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, 30.878443, -0.3515129, -2.6962717)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D7"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("16_ppoqv")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, 10.273382, -0.3515129, -2.6962717)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D8"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("17_kraxp")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, -17.784002, -0.43358302, -2.6962717)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D9"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("16_ppoqv")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, -7.590248, -0.43358302, -2.6962717)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D10"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("17_kraxp")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, 18.698946, -0.43358302, -2.2194273)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D11"]
+transform = Transform3D(0.375, 2.5233021e-08, 8.1490725e-09, -7.2759576e-10, 0.375, 0, -1.1641532e-10, -7.450581e-09, 0.37499997, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("18_ddabq")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="."]
+transform = Transform3D(1.225, 0, 0, 0, 1.225, 0, 0, 0, 1.225, 19.470709, -0.43358302, -2.7148516)
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D12"]
+transform = Transform3D(0.445, 8.6341356e-10, 1.381462e-10, -8.6341356e-10, 0.445, 8.841356e-09, -1.381462e-10, -8.841356e-09, 0.445, 1.1918888, 0.90199363, -0.20864952)
+shaded = true
+alpha_cut = 1
+texture = ExtResource("19_f11g8")
+
+[node name="BACKGROUND" type="StaticBody3D" parent="."]
+transform = Transform3D(1.77, 0, 0, 0, 1.77, 0, 0, 0, 1.77, 0, 6.039928, -29.125536)
+
+[node name="Sprite3D" type="Sprite3D" parent="BACKGROUND"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.9509573, -11.067585)
+shaded = true
+texture_filter = 0
+texture = ExtResource("20_f11g8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="BACKGROUND"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.25917, -2.9509573, -10.918987)
+shaded = true
+texture_filter = 0
+texture = ExtResource("20_kraxp")
+
+[node name="Sprite3D3" type="Sprite3D" parent="BACKGROUND"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.259987, -2.9509573, -11.067585)
+shaded = true
+texture_filter = 0
+texture = ExtResource("22_m3qrj")
+
+[node name="Sprite3D4" type="Sprite3D" parent="BACKGROUND"]
+transform = Transform3D(2.445, 0, 0, 0, 0.43499997, 0, 0, 0, 1, 0, -2.749741, 11.74328)
+shaded = true
+texture_filter = 1
+texture = ExtResource("23_m3qrj")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(7.34, 0, 0, 0, 7.3398585, 0.045605864, 0, -0.045605864, 7.3398585, 8.79195, 17.023098, -48.468475)
+visible = false
+amount = 101
+lifetime = 1.53
+preprocess = 2.05
+speed_scale = 0.2
+collision_base_size = 0.0
+visibility_aabb = AABB(-3.23, -4, -4, 7.39, 8, 8)
+draw_order = 1
+trail_enabled = true
+trail_lifetime = 8.99
+process_material = SubResource("ParticleProcessMaterial_gd4ex")
+draw_passes = 2
+draw_pass_1 = SubResource("QuadMesh_tr3sn")
+draw_pass_2 = null
